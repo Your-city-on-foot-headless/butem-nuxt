@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+// import { ref } from 'vue'
 const route = useRoute()
 const config = useRuntimeConfig()
 // const data1 = await useFetch(config.public.wordpressUrl)
@@ -17,7 +17,7 @@ if (route.params.slug) {
 
 // const { data, pending, error, refresh } = await useFetch('https://butem-bedrock-wp.ddev.site/wp-json/wp/v2/pages',
 // const { data, pending, error, refresh } = await useFetch('https://butem-bedrock-wp.ddev.site/wp-json/wp/v2/own-pages',
-const { data, pending, error, refresh } = await useFetch(config.public.wordpressUrl,
+const { data, pending, error, refresh } = await useFetch(`${config.public.wordpressUrl}/pages`,
 
 
   {
@@ -29,11 +29,14 @@ console.log('val ', data.value)
 
 </script>
 <template>
-  <div>
-    {{ slug }}
+  <div class="mt-32 mx-16">
+    <MainNav />
+    <!-- {{ slug }} -->
     <!-- {{ data }} -->
-    <h1>{{ data !== null ? data[0]?.title.rendered : 'failure' }}</h1>
+    <!-- <h1>{{ data !== null ? data[0]?.title.rendered : 'failure' }}</h1> -->
 
     <Header :title="data[0]?.title.rendered" :subtitle="data[0]?.content.rendered" />
+
+    <FooterNav />
   </div>
 </template>
