@@ -6,8 +6,8 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxtjs/google-fonts',
-    '@nuxt/image',
     '@nuxt/ui',
+    '@nuxt/image'
   ],
   runtimeConfig: {
     public: {
@@ -35,6 +35,6 @@ export default defineNuxtConfig({
   },
   image: {
     dir: 'assets/images',
-    domains: [process.env.DOMAIN_FOR_IMAGES_URL]
+    // domains: [process.env.DOMAIN_FOR_IMAGES_URL]
   }
 })

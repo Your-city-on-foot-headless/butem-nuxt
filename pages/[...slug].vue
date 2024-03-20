@@ -22,6 +22,8 @@ const { data: pages, pending, error, refresh } = await useFetch(`${config.public
 console.log('val ', pages.value)
 
 </script>
-<template v-for="page in pages" :key="page.slug">
-  <Header :title="page.title.rendered" :content="page.content.rendered" />
+<template>
+  <div v-for="page in pages" :key="page.slug">
+    <Header :title="page.title.rendered" :content="page.content.rendered" />
+  </div>
 </template>
