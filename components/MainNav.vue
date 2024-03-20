@@ -8,7 +8,7 @@ const filteredItems = items.value.filter(el => el.name !== "Strona główna")
 <template>
   <nav class="w-full fixed top-0 left-0 right-0 px-16 py-6 flex items-center justify-between">
     <NuxtLink to="/">
-      <img width="109" height="64" src="/src/images/butem-logo.png" alt="Logo witryny">
+      <img width="109" height="64" src="/assets/images/butem-logo.png" alt="Logo witryny">
     </NuxtLink>
     <ul class="flex items-center gap-x-16">
 
@@ -25,7 +25,7 @@ const filteredItems = items.value.filter(el => el.name !== "Strona główna")
 
 <style scoped>
 nav {
-  background-color: #E2F3F5;
+  background-color: var(--primary-color);
 }
 
 .cityblocks-icon,
@@ -42,14 +42,14 @@ nav {
 }
 
 .cityblocks-icon {
-  background-image: url('/src/images/menu-logo-city-block.png');
+  background-image: url('/assets/images/menu-logo-city-block.png');
 }
 
 .routes-icon {
-  background-image: url('/src/images/menu-logo-route.png');
+  background-image: url('/assets/images/menu-logo-route.png');
 }
 
 .help-icon {
-  background-image: url('/src/images/menu-logo-help.png');
+  background-image: url('/assets/images/menu-logo-help.png');
 }
 </style>

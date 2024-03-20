@@ -1,8 +1,6 @@
 <script setup>
-// import { ref } from 'vue'
 const route = useRoute()
 const config = useRuntimeConfig()
-// const data1 = await useFetch(config.public.wordpressUrl)
 const slug = ref('')
 if (route.params.slug) {
   let lastIndex = route.params.slug.length - 1
@@ -15,28 +13,15 @@ if (route.params.slug) {
   slug.value = 'strona-glowna'
 }
 
-// const { data, pending, error, refresh } = await useFetch('https://butem-bedrock-wp.ddev.site/wp-json/wp/v2/pages',
-// const { data, pending, error, refresh } = await useFetch('https://butem-bedrock-wp.ddev.site/wp-json/wp/v2/own-pages',
-const { data, pending, error, refresh } = await useFetch(`${config.public.wordpressUrl}/pages`,
-
-
+const { data: pages, pending, error, refresh } = await useFetch(`${config.public.wordpressUrl}/pages`,
   {
     query: { slug: slug.value }
   }
 )
 
-console.log('val ', data.value)
+console.log('val ', pages.value)
 
 </script>
-<template>
-  <div class="mt-32 mx-16">
-    <MainNav />
-    <!-- {{ slug }} -->
-    <!-- {{ data }} -->
-    <!-- <h1>{{ data !== null ? data[0]?.title.rendered : 'failure' }}</h1> -->
-
-    <Header :title="data[0]?.title.rendered" :subtitle="data[0]?.content.rendered" />
-
-    <FooterNav />
-  </div>
+<template v-for="page in pages" :key="page.slug">
+  <Header :title="page.title.rendered" :content="page.content.rendered" />
 </template>

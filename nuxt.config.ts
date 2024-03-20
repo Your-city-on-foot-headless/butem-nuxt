@@ -1,15 +1,40 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
+  css: [
+    '@/assets/css/styles.css'
+  ],
+  modules: [
+    '@nuxtjs/google-fonts',
+    '@nuxt/image',
+    '@nuxt/ui',
+  ],
   runtimeConfig: {
     public: {
-      wordpressUrl: 'http://butem-bedrock-wp.ddev.site/wp-json/wp/v2'
+      wordpressUrl: process.env.BACKEND_URL
     }
-  }
+  },
   // routeRules: {
   //   '/**': {
-  //     swr: true   
+  //     swr: true   // cache
   //   }
-  // }
+  // },
+  googleFonts: {
+    families: {
+      Roboto: {
+        wght: [400, 700],
+        ital: [400, 700]
+      }
+    },
+    display: 'fallback',
+    subsets: 'latin',
+    preload: true
+  },
+  colorMode: {
+    preference: 'light'
+  },
+  image: {
+    dir: 'assets/images',
+    domains: [process.env.DOMAIN_FOR_IMAGES_URL]
+  }
 })
