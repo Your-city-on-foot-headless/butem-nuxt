@@ -19,8 +19,6 @@ const { data: pages, pending, error, refresh } = await useFetch(`${config.public
   }
 )
 
-console.log('val ', pages.value)
-
 </script>
 <template>
   <div v-for="page in pages" :key="page.slug">
