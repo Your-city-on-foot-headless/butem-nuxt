@@ -1,9 +1,7 @@
 <template>
-  <!-- <div> -->
   <div class="mt-32 mx-16">
-    <MainNav />
+    <TheMainNav />
     <slot />
-    <FooterNav />
+    <TheFooterNav />
   </div>
-  <!-- </div> -->
 </template>
