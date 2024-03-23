@@ -1,41 +1,36 @@
-# Nuxt 3 Minimal Starter
+# A front part of Butem po mieście project, build on [Nuxt 3](https://nuxt.com/) with:
+- [Nuxt UI](https://ui.nuxt.com/),
+- [Nuxt Image](https://image.nuxt.com/),
+- [Nuxt TailwindCSS](https://tailwindcss.nuxtjs.org/).
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
-Make sure to install the dependencies:
+Install the dependencies:
 
 ```bash
-# npm
-npm install
-
 # pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
+
+**_Don't forget to adjust your .env file (use a template from .env.example from this repo and name it accordingly to files used in package.json commands)._**
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
+Start the development server on `http://localhost:3000` (automatically opens a browser):
 
 ```bash
-# npm
-npm run dev
-
 # pnpm
-pnpm run dev
+pnpm dev -o
+```
 
-# yarn
-yarn dev
+## Staging
 
-# bun
-bun run dev
+Build the application for stage environment:
+
+```bash
+# pnpm
+pnpm run stage
 ```
 
 ## Production
@@ -43,33 +38,13 @@ bun run dev
 Build the application for production:
 
 ```bash
-# npm
-npm run build
-
 # pnpm
 pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
 Locally preview production build:
 
 ```bash
-# npm
-npm run preview
-
 # pnpm
 pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
